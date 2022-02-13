@@ -1,0 +1,220 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Character/Character.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Character/AlientSpritesheet_UPSCALED_NORMAL.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Character/AlientSpritesheet_UPSCALED.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Character/AlientWeaponArm.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Character/AlientWeaponArm_NORMAL.png" type="Texture" id=5]
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 28.0
+height = 32.0
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 196.003
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 19.105
+
+[sub_resource type="Animation" id=8]
+resource_name = "BackStatic"
+length = 0.6
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 33, 34, 35 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "BackWalk"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "ForwardStatic"
+length = 0.6
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 22, 23 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "ForwardWalk"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "LeftStatic"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 28, 29, 30, 31 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "LeftWalk"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 15 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "RightStatic"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "RightWalk"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "WeaponPulse"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[node name="Character" type="KinematicBody2D"]
+script = ExtResource( 1 )
+body_sprite = NodePath("BodySprite")
+body_animator = NodePath("BodySprite/WalkAnimator")
+weapon_sprite = NodePath("WeaponArm")
+weapon_animator = NodePath("WeaponArm/GunAnimator")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="HitboxCollider" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource( 10 )
+
+[node name="Interactbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactbox"]
+shape = SubResource( 11 )
+
+[node name="FeetCollider" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 30 )
+shape = SubResource( 9 )
+
+[node name="BodySprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+normal_map = ExtResource( 2 )
+hframes = 4
+vframes = 9
+frame = 4
+
+[node name="WalkAnimator" type="AnimationPlayer" parent="BodySprite"]
+anims/BackStatic = SubResource( 8 )
+anims/BackWalk = SubResource( 4 )
+anims/ForwardStatic = SubResource( 5 )
+anims/ForwardWalk = SubResource( 1 )
+anims/LeftStatic = SubResource( 7 )
+anims/LeftWalk = SubResource( 3 )
+anims/RightStatic = SubResource( 6 )
+anims/RightWalk = SubResource( 2 )
+
+[node name="WeaponArm" type="Sprite" parent="."]
+position = Vector2( -9, 18 )
+texture = ExtResource( 4 )
+normal_map = ExtResource( 5 )
+hframes = 4
+frame = 2
+
+[node name="GunAnimator" type="AnimationPlayer" parent="WeaponArm"]
+anims/WeaponPulse = SubResource( 12 )
